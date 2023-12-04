@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- CSS File -->
+
+    <title>Employees</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!--  the header  -->
+  <div id="header">
+  
+  </div>
+
+    <!-- main body-->
+    <div class="container-xxl">
+      <h2 class="mb-2"></h2>
+
+      <div class="row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          <div class="card" >
+            <div class="card-header">
+              Create New Employee 
+          </div>
+            <div class="card-body">
+             <!--  <h5 class="card-title">Personen</h5> -->
+              <form class="row g-3" id="newEmployeeForm">
+                <div class="col-md-6">
+                  <label for="newEmployeeName" class="form-label">Employee Name</label>
+                  <input type="text" class="form-control" id="newEmployeeName" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="NewProject" class="form-label">Project</label>
+                  <select id="NewProject" class="form-select">
+                    <option value="project1">Project 1</option>
+                    <option value="project2">Project 2</option>
+                  </select>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-primary">Add Employee</button>
+                </div>
+                </form>
+          
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-header">
+                Existing Personen
+            </div>
+            <div class="card-body">
+                
+              <ul class="list-group list-group-flush" id="newEmployeeList">
+            
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+   <!--  <aside class="form-aside">
+      <form id="employeeForm">
+      
+        <label for="employeeName">Employee Name:</label>
+        <input type="text" id="employeeName" name="employeeName">
+        
+        <label for="project">Project:</label>
+        <select id="project" name="project">
+          <option value="project1">Project 1</option>
+          <option value="project2">Project 2</option>
+        </select>
+        
+        <button type="submit">Add Employee</button>
+      </form>
+    </aside>
+    
+    <aside class="list-aside">
+      <ul id="employeeList">
+        
+        <li>mkfdskndn</li>
+      </ul>
+    </aside> -->
+  </div>
+
+
+
+<!-- //main body // -->
+
+
+
+<!-- // the footer // -->
+
+<div id="footer">
+
+</div>
+
+  
+    <!-- Bootstrap JavaScript and jQuery (required for Bootstrap) -->
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f1c61f7373.js" crossorigin="anonymous"></script>
+  <script>let viewName='Personen'</script>
+    <script src="assets/js/script.js"></script>
+  <script src="assets/js/person.js"></script>
+</body>
+</html>

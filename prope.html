@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+#headerContainer, #footerContainer {
+    background-color: #fff;
+    margin-bottom: 2em;
+    padding: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.card-header {
+    background-color: #007bff;
+    color: #fff;
+}
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+.container-fluid {
+    padding: 0 4em;
+}
+.list-group-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+}
+</style>
+<body>
+
+<div id="headerContainer"><!-- Header  --></div>
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Project  Form -->
+            <div class="card">
+                <div class="card-header">
+                    Create New Project
+                </div>
+                <div class="card-body">
+                    <form id="createProjectForm">
+                        <div class="form-group">
+                            <label for="projectName">Project Name</label>
+                            <input type="text" class="form-control" id="projectName" placeholder="Enter Project Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="responsible">Responsible (employee)</label>
+                            <input type="text" class="form-control" id="responsible" placeholder="Enter Responsible Person's Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectDescription">Project Description</label>
+                            <textarea class="form-control" id="projectDescription" rows="3" placeholder="Enter Project Description" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create Project</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <!-- Existing Projects List -->
+            <div class="card">
+                <div class="card-header">
+                    List of Existing Projects <br>
+                    blah blah blahhhh <br>
+                    blah blah blahhhh <br>
+                    blah blah blahhhh 
+
+                </div>
+                <div class="card-body">
+                    <ul id="existingProjectsList" class="list-group">
+                        <!-- Existing projects will be listed here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footerContainer"><!-- Footer  --></div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+<script>
+    // Load the header and footer
+    document.addEventListener('DOMContentLoaded', function() {
+        loadHeaderAndFooter();
+        loadExistingProjects();
+    });
+
+    function loadHeaderAndFooter() {
+        fetch('header.html')
+            .then(response => response.text())
+            .then(headerHtml => {
+                document.getElementById('headerContainer').innerHTML = headerHtml;
+            })
+            .catch(error => console.error('Error loading header:', error));
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(footerHtml => {
+                document.getElementById('footerContainer').innerHTML = footerHtml;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    }
+
+    // Handle form submission
+    document.getElementById('createProjectForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const projectName = document.getElementById('projectName').value;
+        const responsible = document.getElementById('responsible').value;
+        const projectDescription = document.getElementById('projectDescription').value;
+
+        //  replace 'MY_API_ENDPOINT' with the endpoint  (waiting the API from backend)
+        fetch('MY_API_ENDPOINT', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                // Add any other headers your API requires
+            },
+            body: JSON.stringify({
+                
+                name: projectName,
+                responsible_person: responsible,
+                description: projectDescription
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            loadExistingProjects(); // Reload the list after a new project is added
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+
+    function loadExistingProjects() {
+        // Replace 'MY_API_ENDPOINT_FOR_LISTING_PROJECTS' with the endpoint to retrieve projects
+        fetch('MY_API_ENDPOINT_FOR_LISTING_PROJECTS')
+        .then(response => response.json())
+        .then(data => {
+            const projectList = document.getElementById('existingProjectsList');
+            projectList.innerHTML = ''; // Clear the list
+            data.forEach(project => {
+                const listItem = document.createElement('li');
+                listItem.className = 'list-group-item';
+                listItem.textContent = project.name; // Replace 'project.name' with howmy projects are named in the API response
+                projectList.appendChild(listItem);
+            });
+        })
+        .catch(error => console.error('Error loading projects:', error));
+    }
+</script>
+
+</body>
+</html>

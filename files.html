@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link to Bootstrap CSS -->
+     
+    <!-- google fonts-->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- CSS File -->
+
+    <title>Manage File Stores</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!--  the header  -->
+  <div id="header">
+  
+  </div>
+    <div class="container-xxl">
+        <h2 class="mb-2"></h2>
+
+        <!-- Form to Create a New File Store -->
+        
+        <div class="row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <div class="card">
+                <div class="card-header">
+                    Create New File 
+                </div>
+                <div class="card-body">
+                    <form id="createFileStoreForm">
+                        <div class="form-group mb-2">
+                            <label for="fileStoreName" class="form-label">File  Name</label>
+                            <input type="text" class="form-control" id="fileStoreName" placeholder="Enter File Store Name" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="fileStoreDescription" class="form-label">Description</label>
+                            <textarea class="form-control" id="fileStoreDescription" placeholder="File Store Description"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary">
+                                Create File Store
+                            </button>
+                          </div>
+                       
+                    </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-header">
+                    Existing File Stores
+                </div>
+                <div class="card-body">
+                    
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">File 1</li>
+                      <li class="list-group-item">File 2</li>
+                      <li class="list-group-item">File 3</li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </div>
+
+    <div id="footer">
+
+    </div>
+    
+      
+        <!-- Bootstrap JavaScript and jQuery (required for Bootstrap) -->
+        <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/f1c61f7373.js" crossorigin="anonymous"></script>
+        <script>let viewName='Files'</script>
+        <script src="assets/js/script.js"></script>
+    </body>
+    </html>
+    
