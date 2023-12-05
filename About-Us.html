@@ -1,50 +1,75 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us </title>
-    <!-- style-css-->
-    <link rel="stylesheet" href="style.css">
-    <!-- Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- CSS File -->
+    <title>Manage Projects</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!--  the header  -->
+    <div id="header"></div>
+    <!-- main body-->
 
-
-
-</head>
 <body>
     <!-- Include the header  -->
-<script>
-   
-    var headerContainer = document.createElement('div');
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            headerContainer.innerHTML = data;
-            document.body.prepend(headerContainer);
-        });
-</script>
 
 
-  <div>
-    <h1>information about the project</h1>
+
+  <div class="container-xxl">
+    <div class="about">
+        <p> Die Wildauer Maschinen Werke (WMW) ist eine Lern-, Forschungs-
+            und Transferplattform für digitale Kompetenzen an der Technischen Hochschule Wildau. 
+            Sie fungiert als ein Netzwerk verschiedener Studiengänge und Forschungsgruppen, 
+            die sich zu einer virtuellen Fallstudie im Kontext eines Fahrzeugbauunternehmens zusammenschließen​​.
+            Diese "Lernfabrik" vereint nun auch ihre lokalen Projektvorlesungen in den
+            Bereichen Industrietechnik, Wirtschaftsinformatik, Automatisierungstechnik und vieles
+            mehr an einem zentralen Ort, dem Haus 24, Raum 213-215 auf der Schwartzkopffstraße 9 in Wildau​​.</p>
+    </div>
+    <div class="about">
+        <p>
+            Ein bemerkenswerter Beitrag im Kontext der WMW ist die Beteiligung des Sprechers der WMW,
+            Prof. Dr.-Ing. Stefan Kubica, und seines Doktoranden, Tobias Peuschke-Bischof, an dem Buch 
+            "Applying Data Science". Ihr Kapitel beschreibt die Integration eines Rahmens zur 
+            Verwaltung und Analyse von Fahrzeugdaten für die Entwicklung modellbasierter
+            Fahrerassistenzsysteme in Lehre und Forschung​​.
+        </p>
+    </div>
+    
+
+        
+        
   </div>
 
 
-      <!-- Include the footer  -->
- <script>
-    var footerContainer = document.createElement('div');
-    fetch('Footer.html')
-        .then(response => response.text())
-        .then(data => {
-            footerContainer.innerHTML = data;
-            document.body.appendChild(footerContainer);
-        });
-</script>
-
-    <script src=<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
-
+  <div id="footer"></div>
+  <!-- Bootstrap JavaScript and jQuery (required for Bootstrap) -->
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script
+    src="https://kit.fontawesome.com/f1c61f7373.js"
+    crossorigin="anonymous"></script>
+  <script>
+    let viewName = "Contact";
+  </script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/contact.js"></script>
 </body>
 </html>
+ 
